@@ -4,7 +4,105 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ronash Hub</title>
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1e1e2f, #27293d);
+      color: #fff;
+      text-align: center;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 600px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    .script-box {
+      background: #111;
+      padding: 15px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .script-box code {
+      font-size: 0.9rem;
+      color: #0ff;
+      word-break: break-all;
+    }
+
+    .script-box button {
+      background: #0ff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .script-box button:hover {
+      background: #00cccc;
+    }
+
+    .key-box {
+      margin-top: 20px;
+      background: #222;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .key-box p {
+      margin: 0 0 10px;
+      color: #ffcc00;
+      font-weight: bold;
+    }
+
+    .key-btn {
+      display: inline-block;
+      padding: 10px 18px;
+      background: #5865F2;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .key-btn:hover {
+      background: #4752c4;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
 </head>
 <body>
 
@@ -33,6 +131,24 @@
     &copy; 2025 Ronash Studio
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    const robloxScript = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/jonashstudio/RonashOnTop.github.io/refs/heads/main/script.lua"))()';
+
+    function copyScript() {
+      const copyBtn = document.querySelector(".script-box button");
+
+      navigator.clipboard.writeText(robloxScript)
+        .then(() => {
+          copyBtn.textContent = "✔ Copied!";
+          copyBtn.disabled = true;
+
+          setTimeout(() => {
+            copyBtn.textContent = "Copy";
+            copyBtn.disabled = false;
+          }, 2000);
+        })
+        .catch(err => alert("Failed to copy: " + err));
+    }
+  </script>
 </body>
 </html>
