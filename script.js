@@ -1,17 +1,19 @@
-// Roblox hub script
-const robloxScript = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/jonashstudio/Ronashhub/refs/heads/main/Ronash%20hub"))()';
-
-// Load script dynamically
-function loadScript() {
-    const script = document.createElement('script');
-    script.src = 'https://raw.githubusercontent.com/jonashstudio/Ronashhub/refs/heads/main/Ronash%20hub';
-    document.body.appendChild(script);
-    alert('Script loaded successfully!');
-}
+// Roblox hub script (points to script.lua in your repo)
+const robloxScript = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/jonashstudio/RonashOnTop.github.io/refs/heads/main/script.lua"))()';
 
 // Copy script to clipboard
 function copyScript() {
+    const copyBtn = document.querySelector(".script-box button");
+
     navigator.clipboard.writeText(robloxScript)
-        .then(() => alert('Script copied to clipboard!'))
-        .catch(err => alert('Failed to copy script: ' + err));
+        .then(() => {
+            copyBtn.textContent = "✔ Copied!";
+            copyBtn.disabled = true;
+
+            setTimeout(() => {
+                copyBtn.textContent = "Copy";
+                copyBtn.disabled = false;
+            }, 2000);
+        })
+        .catch(err => alert("Failed to copy: " + err));
 }
