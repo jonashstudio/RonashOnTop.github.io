@@ -23,7 +23,7 @@ local Window = Rayfield:CreateWindow({
         Note = "Join our Discord to get the key!",
         FileName = "RonashKey", -- saved locally
         SaveKey = true, -- saves key between executions
-        GrabKeyFromSite = false, -- set true if later you want a website key
+        GrabKeyFromSite = false,
         Key = {"Ronashhubontop"} -- ✅ only valid key
     }
 })
