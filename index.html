@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ronash Hub</title>
+
+  <!-- Link CSS -->
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="your-logo.png">
 </head>
 <body>
 
@@ -14,17 +15,28 @@
     <div class="overlay">
       <h1>Ronash Hub</h1>
       <p>Welcome! Load or copy your Roblox hub script below.</p>
+      
+      <!-- Script Box -->
+      <div class="script-box">
+        <code id="scriptCode">
+          loadstring(game:HttpGet("https://raw.githubusercontent.com/jonashstudio/Ronashhub/refs/heads/main/Ronash%20hub"))()
+        </code>
+        <button onclick="copyScript()">Copy</button>
+      </div>
+
+      <!-- Action Buttons -->
       <div class="buttons">
         <button onclick="loadScript()">Load Script</button>
-        <button onclick="copyScript()">Copy Script</button>
       </div>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     &copy; 2025 Ronash Studio
   </footer>
 
+  <!-- Link JS -->
   <script src="script.js"></script>
 </body>
 </html>
