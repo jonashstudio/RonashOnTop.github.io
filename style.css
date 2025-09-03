@@ -1,0 +1,98 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: radial-gradient(circle at top left, #0f0f1e, #1a1a2f);
+  color: #fff;
+  text-align: center;
+}
+
+/* Hero */
+.hero {
+  height: 100vh;
+  background: url('assets/hero-image.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.hero .overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 50px;
+  border-radius: 15px;
+  max-width: 800px;
+  margin: auto;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #ff5e57;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Script Box */
+.script-box {
+  background: #1e1e2f;
+  border: 1px solid #ff5e57;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 20px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.script-box code {
+  font-family: monospace;
+  color: #00ff99;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+.script-box button {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: linear-gradient(45deg, #ff5e57, #ff3b30);
+  color: #fff;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+}
+.script-box button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #ff5e57, 0 0 30px #ff3b30;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+button {
+  padding: 15px 35px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: linear-gradient(45deg, #ff5e57, #ff3b30);
+  color: #fff;
+  box-shadow: 0 0 15px #ff5e57, 0 0 30px #ff3b30;
+  transition: all 0.3s ease;
+}
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #ff5e57, 0 0 50px #ff3b30;
+}
+
+/* Footer */
+footer {
+  padding: 20px;
+  background: rgba(10, 10, 30, 0.5);
+  color: #888;
+  font-size: 0.9rem;
+}
