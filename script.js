@@ -1,7 +1,7 @@
 // Roblox hub script
 const robloxScript = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/jonashstudio/Ronashhub/refs/heads/main/Ronash%20hub"))()';
 
-// Load the script dynamically
+// Load script dynamically
 function loadScript() {
     const script = document.createElement('script');
     script.src = 'https://raw.githubusercontent.com/jonashstudio/Ronashhub/refs/heads/main/Ronash%20hub';
@@ -9,7 +9,7 @@ function loadScript() {
     alert('Script loaded successfully!');
 }
 
-// Copy the script to clipboard
+// Copy script to clipboard
 function copyScript() {
     navigator.clipboard.writeText(robloxScript)
         .then(() => alert('Script copied to clipboard!'))
