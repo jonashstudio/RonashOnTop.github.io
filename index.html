@@ -1,176 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ronash Hub</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RonashOnTop Hub</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1a0a0a;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+  }
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #1e1e2f, #27293d);
-      color: #fff;
-      text-align: center;
-    }
+  .container {
+    background: #2b0f0f;
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 700px;
+    text-align: center;
+    box-shadow: 0 0 30px #ff0000, 0 0 60px #ff0000, 0 0 90px #ff0000;
+  }
 
-    .hero {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+  h1 {
+    font-size: 3rem;
+    color: #ff0000;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #ff4d4d, 0 0 10px #ff1a1a, 0 0 20px #ff0000;
+    animation: glowPulse 2s infinite alternate;
+  }
 
-    .overlay {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 30px;
-      border-radius: 12px;
-      max-width: 600px;
-    }
+  @keyframes glowPulse {
+    0% { text-shadow: 0 0 5px #ff4d4d, 0 0 10px #ff1a1a, 0 0 20px #ff0000; }
+    100% { text-shadow: 0 0 10px #ff9999, 0 0 20px #ff4d4d, 0 0 40px #ff0000; }
+  }
 
-    /* 🔥 Neon glowing title */
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-      color: #0ff;
-      text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
-      animation: neonPulse 2s infinite alternate;
-    }
+  .script-box {
+    background: #1e0a0a;
+    border: 2px solid #ff0000;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    position: relative;
+    box-shadow: 0 0 15px #ff0000, 0 0 30px #ff4d4d;
+  }
 
-    @keyframes neonPulse {
-      from {
-        text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
-      }
-      to {
-        text-shadow: 0 0 10px #00e6e6, 0 0 20px #00e6e6, 0 0 40px #00e6e6, 0 0 80px #00e6e6;
-      }
-    }
+  .script-box code {
+    display: block;
+    word-break: break-all;
+    font-family: monospace;
+    font-size: 1rem;
+    color: #ff9999;
+  }
 
-    p {
-      margin-bottom: 20px;
-      font-size: 1.1rem;
-      color: #ccc;
-    }
+  .glow-btn {
+    background: #ff0000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+    margin-top: 15px;
+    box-shadow: 0 0 10px #ff0000, 0 0 20px #ff4d4d, 0 0 30px #ff9999;
+    transition: 0.3s;
+  }
 
-    .script-box {
-      background: #111;
-      padding: 15px;
-      border-radius: 8px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-    }
+  .glow-btn:hover {
+    background: #ff4d4d;
+    box-shadow: 0 0 20px #ff6666, 0 0 40px #ff9999, 0 0 60px #ffb3b3;
+  }
 
-    .script-box code {
-      font-size: 0.9rem;
-      color: #0ff;
-      word-break: break-all;
-    }
+  .about {
+    text-align: left;
+    background: #1e0a0a;
+    border: 2px solid #ff0000;
+    padding: 20px;
+    border-radius: 10px;
+    color: #ffcccc;
+    box-shadow: 0 0 10px #ff0000;
+  }
 
-    /* 🔥 Glowing copy button */
-    .glow-btn {
-      background: #0ff;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-      color: #000;
-      box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
-      transition: 0.3s;
-    }
+  .about h2 {
+    color: #ff4d4d;
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px #ff6666;
+  }
 
-    .glow-btn:hover {
-      box-shadow: 0 0 20px #00cccc, 0 0 40px #00cccc, 0 0 60px #00cccc;
-      background: #00cccc;
-    }
+  .about ul {
+    padding-left: 20px;
+  }
 
-    .key-box {
-      margin-top: 20px;
-      background: #222;
-      padding: 15px;
-      border-radius: 8px;
-    }
+  .discord {
+    margin-top: 15px;
+    color: #ff6666;
+    font-weight: bold;
+  }
 
-    .key-box p {
-      margin: 0 0 10px;
-      color: #ffcc00;
-      font-weight: bold;
-    }
-
-    /* 🔥 Glowing Discord button */
-    .key-btn {
-      display: inline-block;
-      padding: 10px 18px;
-      background: #5865F2;
-      color: #fff;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 0 10px #5865F2, 0 0 20px #5865F2, 0 0 30px #5865F2;
-      transition: 0.3s;
-    }
-
-    .key-btn:hover {
-      background: #4752c4;
-      box-shadow: 0 0 20px #4752c4, 0 0 40px #4752c4, 0 0 60px #4752c4;
-    }
-
-    footer {
-      position: absolute;
-      bottom: 10px;
-      width: 100%;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
-  </style>
+  footer {
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: #aaa;
+  }
+</style>
 </head>
 <body>
 
-  <section class="hero">
-    <div class="overlay">
-      <h1>Ronash Hub</h1>
-      <p>Welcome! Copy your Roblox hub loadstring below.</p>
-      
-      <!-- Script Box -->
-      <div class="script-box">
-        <code id="scriptCode">
-          loadstring(game:HttpGet("https://raw.githubusercontent.com/jonashstudio/RonashOnTop.github.io/refs/heads/main/script.lua"))()
-        </code>
-        <button class="glow-btn" onclick="copyScript()">Copy</button>
-      </div>
+<div class="container">
+  <h1>RonashOnTop Hub</h1>
 
-      <!-- Key System Section -->
-      <div class="key-box">
-        <p>🔑 A key is required to use Ronash Hub.</p>
-        <a href="https://discord.gg/nBMb3dh7" target="_blank" class="key-btn">Get Key (Discord)</a>
-      </div>
+  <div class="script-box">
+    <code id="scriptCode">loadstring(game:HttpGet("https://raw.githubusercontent.com/jonashstudio/https-RonashOnTop.github.io/main/script.lua"))()</code>
+    <button class="glow-btn" onclick="copyScript()">Copy</button>
+  </div>
+
+  <div class="about">
+    <h2>About the Script</h2>
+    <ul>
+      <li>Speed, High Jump, Low Gravity, and Unlimited Jump toggles</li>
+      <li>ESP for players</li>
+      <li>Anti-AFK functionality</li>
+      <li>Notifications and Discord integration</li>
+    </ul>
+    <div class="discord">
+      Discord: <a href="https://discord.gg/nBMb3dh7" target="_blank" style="color:#ff9999;">Join Here</a>
     </div>
-  </section>
+  </div>
+</div>
 
-  <footer>
-    &copy; 2025 Ronash Studio
-  </footer>
+<footer>&copy; 2025 Ronash Studio</footer>
 
-  <script>
-    const robloxScript = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/jonashstudio/RonashOnTop.github.io/refs/heads/main/script.lua"))()';
+<script>
+const robloxScript = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/jonashstudio/https-RonashOnTop.github.io/main/script.lua"))()';
 
-    function copyScript() {
-      const copyBtn = document.querySelector(".script-box button");
+function copyScript() {
+  const copyBtn = document.querySelector(".script-box button");
+  navigator.clipboard.writeText(robloxScript)
+    .then(() => {
+      copyBtn.textContent = "✔ Copied!";
+      copyBtn.disabled = true;
+      setTimeout(() => {
+        copyBtn.textContent = "Copy";
+        copyBtn.disabled = false;
+      }, 2000);
+    })
+    .catch(err => alert("Failed to copy: " + err));
+}
+</script>
 
-      navigator.clipboard.writeText(robloxScript)
-        .then(() => {
-          copyBtn.textContent = "✔ Copied!";
-          copyBtn.disabled = true;
-
-          setTimeout(() => {
-            copyBtn.textContent = "Copy";
-            copyBtn.disabled = false;
-          }, 2000);
-        })
-        .catch(err => alert("Failed to copy: " + err));
-    }
-  </script>
 </body>
 </html>
