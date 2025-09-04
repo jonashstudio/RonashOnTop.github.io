@@ -1,156 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RonashOnTop Hub</title>
-<style>
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #1a0a0a;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-
-  .container {
-    background: #2b0f0f;
-    border-radius: 15px;
-    padding: 40px;
-    max-width: 700px;
-    text-align: center;
-    box-shadow: 0 0 30px #ff0000, 0 0 60px #ff0000, 0 0 90px #ff0000;
-  }
-
-  h1 {
-    font-size: 3rem;
-    color: #ff0000;
-    margin-bottom: 20px;
-    text-shadow: 0 0 5px #ff4d4d, 0 0 10px #ff1a1a, 0 0 20px #ff0000;
-    animation: glowPulse 2s infinite alternate;
-  }
-
-  @keyframes glowPulse {
-    0% { text-shadow: 0 0 5px #ff4d4d, 0 0 10px #ff1a1a, 0 0 20px #ff0000; }
-    100% { text-shadow: 0 0 10px #ff9999, 0 0 20px #ff4d4d, 0 0 40px #ff0000; }
-  }
-
-  .script-box {
-    background: #1e0a0a;
-    border: 2px solid #ff0000;
-    border-radius: 12px;
-    padding: 20px;
-    margin: 20px 0;
-    position: relative;
-    box-shadow: 0 0 15px #ff0000, 0 0 30px #ff4d4d;
-  }
-
-  .script-box code {
-    display: block;
-    word-break: break-all;
-    font-family: monospace;
-    font-size: 1rem;
-    color: #ff9999;
-  }
-
-  .glow-btn {
-    background: #ff0000;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    color: #fff;
-    margin-top: 15px;
-    box-shadow: 0 0 10px #ff0000, 0 0 20px #ff4d4d, 0 0 30px #ff9999;
-    transition: 0.3s;
-  }
-
-  .glow-btn:hover {
-    background: #ff4d4d;
-    box-shadow: 0 0 20px #ff6666, 0 0 40px #ff9999, 0 0 60px #ffb3b3;
-  }
-
-  .about {
-    text-align: left;
-    background: #1e0a0a;
-    border: 2px solid #ff0000;
-    padding: 20px;
-    border-radius: 10px;
-    color: #ffcccc;
-    box-shadow: 0 0 10px #ff0000;
-  }
-
-  .about h2 {
-    color: #ff4d4d;
-    margin-bottom: 10px;
-    text-shadow: 0 0 5px #ff6666;
-  }
-
-  .about ul {
-    padding-left: 20px;
-  }
-
-  .discord {
-    margin-top: 15px;
-    color: #ff6666;
-    font-weight: bold;
-  }
-
-  footer {
-    margin-top: 25px;
-    font-size: 0.9rem;
-    color: #aaa;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RonashOnTop</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <div class="container">
+    <h1 class="glow">RonashOnTop</h1>
+    <p class="subtitle">The official hub for Ronash</p>
 
-<div class="container">
-  <h1>RonashOnTop Hub</h1>
-
-  <div class="script-box">
-    <code id="scriptCode">loadstring(game:HttpGet("https://raw.githubusercontent.com/jonashstudio/https-RonashOnTop.github.io/main/script.lua"))()</code>
-    <button class="glow-btn" onclick="copyScript()">Copy</button>
-  </div>
-
-  <div class="about">
-    <h2>About the Script</h2>
-    <ul>
-      <li>Speed, High Jump, Low Gravity, and Unlimited Jump toggles</li>
-      <li>ESP for players</li>
-      <li>Anti-AFK functionality</li>
-      <li>Notifications and Discord integration</li>
-    </ul>
-    <div class="discord">
-      Discord: <a href="https://discord.gg/nBMb3dh7" target="_blank" style="color:#ff9999;">Join Here</a>
+    <div class="script-box">
+      <code id="script-text">loadstring(game:HttpGet("https://ronashontop.infy.uk/script.lua"))()</code>
+      <button onclick="copyScript()">📋 Copy</button>
     </div>
+
+    <a href="https://discord.gg/yourinvite" class="discord-btn" target="_blank">Join Discord</a>
   </div>
-</div>
-
-<footer>&copy; 2025 Ronash Studio</footer>
-
-<script>
-const robloxScript = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/jonashstudio/https-RonashOnTop.github.io/main/script.lua"))()';
-
-function copyScript() {
-  const copyBtn = document.querySelector(".script-box button");
-  navigator.clipboard.writeText(robloxScript)
-    .then(() => {
-      copyBtn.textContent = "✔ Copied!";
-      copyBtn.disabled = true;
-      setTimeout(() => {
-        copyBtn.textContent = "Copy";
-        copyBtn.disabled = false;
-      }, 2000);
-    })
-    .catch(err => alert("Failed to copy: " + err));
-}
-</script>
-
 </body>
 </html>
